@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo apt update && sudo apt upgrade -y && sudo apt install gconjugue aisleriot tuxtype gbrainy gnome-mahjongg gnome-mines gnome-sudoku gnome-cards-data libsass1 sassc language-pack-gnome-pt language-pack-pt-base -y; gsettings set org.cinnamon.desktop.background picture-uri 'file:/usr/share/backgrounds/linuxmint-una/aholmes_moraine_lake.jpg'; gsettings set org.cinnamon.desktop.wm.preferences theme 'Mint-Y'; gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark-Purple'; gsettings set org.cinnamon.desktop.interface icon-theme 'Mint-Y-Purple'; sudo useradd -s /usr/bin/bash -m aluno && sudo passwd -d aluno && cinnamon-session-quit --logout --force

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+DESKTOP=$(echo $DESKTOP_SESSION)
+NAME=$(cat /etc/os-release | grep VERSION_CODENAME | cut -b 18-40 | xargs)
+PORN=$(cat ./block.txt)
+
+if [ "$DESKTOP" == "xfce" ];then
+
+	xfce4-terminal -e 'sudo apt update && sudo apt upgrade -y && sudo apt install gconjugue aisleriot tuxtype gbrainy gnome-mahjongg gnome-mines gnome-sudoku gnome-cards-data libsass1 sassc language-pack-gnome-pt language-pack-pt-base -y && sudo useradd -s /usr/bin/bash -m aluno && sudo passwd -d aluno && shutdown -h now'
+
+else
+	sudo apt update && sudo apt upgrade -y && sudo apt install gconjugue aisleriot tuxtype gbrainy gnome-mahjongg gnome-mines gnome-sudoku gnome-cards-data libsass1 sassc language-pack-gnome-pt language-pack-pt-base -y;gsettings set org.cinnamon.desktop.background picture-uri 'file:/usr/share/backgrounds/linuxmint-'$NAME'/eskof_bubble'; gsettings set org.cinnamon.desktop.wm.preferences theme 'Mint-Y'; gsettings set org.cinnamon.desktop.interface gtk-theme 'Mint-Y-Dark-Purple'; gsettings set org.cinnamon.desktop.interface icon-theme 'Mint-Y-Purple'; touch hosts && echo $PORN > hosts && sudo mv -f hosts /etc/ && sudo useradd -s /usr/bin/bash -m aluno && sudo passwd -d aluno && cinnamon-session-quit --logout --force
+fi
